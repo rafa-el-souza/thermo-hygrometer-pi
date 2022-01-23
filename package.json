@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "mocha"
+    "test": "mocha",
+    "sensor": "node dht11/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
   "keywords": [
     "thermo-hygromoter",
     "termo-higrômetro",
-    "rapsberry pi",
+    "raspberry pi",
     "DHT11",
     "nodejs"
   ],
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "node-dht-sensor": "^0.4.3"
   }
 }
