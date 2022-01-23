@@ -1,4 +1,4 @@
-const mySQL = require('mysql2');
+const mySQL = require('mysql2/promise');
 
 const connection = mySQL.createPool({
   host: 'localhost',
