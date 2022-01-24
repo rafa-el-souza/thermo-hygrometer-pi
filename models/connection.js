@@ -1,11 +1,11 @@
-const mySQL = require('mysql2/promise');
+const mariadb = require('mariadb');
 
-const connection = mySQL.createPool({
+const pool = mariadb.createPool({
   host: 'localhost',
-  port: 3306,
   user: 'root',
-  password: 'password',
-  database: 'thermo_hygrometer_pi'
+  password: 'myPassword',
+  connectionLimit: 5
+  // database: 'thermo_hygrometer_pi'
 });
 
-module.exports = connection;
+module.exports = pool;
