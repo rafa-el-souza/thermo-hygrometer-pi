@@ -30,14 +30,15 @@ const getLast = () => {
     }).catch(err => console.error(err));
 };
 
-const add = (req) => {
-  const { temperature, humidity, timestamp, datetime } = req.headers;
+const add = (temperature, humidity, timestamp, datetime) => {
   pool.getConnection()
     .then(conn => {
+      // const added = { temperature, humidity, timestamp, datetime };
       conn.query('INSERT INTO measurement (temperature_value, humidity_value, time_stamp, date_time)VALUES(?, ?, ?, ?);', [temperature, humidity, timestamp, datetime])
         .then((res) => {
-          console.log(res, res.insertId);
+          console.log(res);
           conn.end();
+          // return { ...added, id: res.insertId};
         })
         .catch(err => {
           console.error(err);
