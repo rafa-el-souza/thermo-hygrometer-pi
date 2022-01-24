@@ -30,7 +30,8 @@ const getLast = () => {
     }).catch(err => console.error(err));
 };
 
-const add = (temperature, humidity, timestamp, datetime) => {
+const add = (req) => {
+  const { temperature, humidity, timestamp, datetime } = req.headers;
   pool.getConnection()
     .then(conn => {
       conn.query('INSERT INTO measurement (temperature_value, humidity_value, time_stamp, date_time)VALUES(?, ?, ?, ?);', [temperature, humidity, timestamp, datetime])
