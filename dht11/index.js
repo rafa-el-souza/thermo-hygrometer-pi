@@ -15,9 +15,9 @@ const readSensor = () => sensor.read(MODEL, GPIO)
   })
   .catch((err) => console.error("Failed to read sensor data:", err));
 
-const recordSensor = ({ temperature, humidity, timestamp, datetime }) => {
+const recordSensor = () => {
   readSensor()
-    .then((res) => {
+    .then(({ temperature, humidity, timestamp, datetime }) => {
       add(temperature, humidity, timestamp, datetime);
     })
     .catch((err) => console.error(err))
