@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
-    "mysql2": "^2.3.3",
+    "mariadb": "^2.5.5",
     "node-dht-sensor": "^0.4.3"
   }
 }
