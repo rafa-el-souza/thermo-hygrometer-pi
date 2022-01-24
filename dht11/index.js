@@ -15,11 +15,16 @@ const readSensor = () => sensor.read(MODEL, GPIO)
   })
   .catch((err) => console.error("Failed to read sensor data:", err));
 
-const recordSensor = () => {
-  setInterval(readSensor
-    .then(({ temperature, humidity, timestamp, datetime }) => {
-      add(temperature, humidity, timestamp, datetime)
-    }), 5000);
+const recordSensor = ({ temperature, humidity, timestamp, datetime }) => {
+  readSensor()
+    .then((res) => {
+      add(temperature, humidity, timestamp, datetime);
+    })
+    .catch((err) => console.error(err))
+}
+
+const recordEvery = (seconds) => {
+  setInterval(recordSensor, seconds * 1000);
 };
 
-module.exports = { readSensor, recordSensor};
+module.exports = { readSensor, recordEvery};
