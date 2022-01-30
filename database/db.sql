@@ -8,7 +8,7 @@ CREATE TABLE measurement(
   measurement_id INT AUTO_INCREMENT PRIMARY KEY,
   temperature_value INT NOT NULL,
   humidity_value INT NOT NULL,
-  time_stamp INT NOT NULL,
+  time_stamp BIGINT NOT NULL,
   date_time DATETIME NOT NULL
 ) engine = InnoDB;
 
