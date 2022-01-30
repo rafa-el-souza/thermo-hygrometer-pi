@@ -1,11 +1,11 @@
 const express = require('express');
 const { recordEvery } = require('./dht11');
-const { getAll, getLast, add } = require('./models/measurementModel');
+const { getAll, getLast } = require('./models/measurementModel');
 const app = express();
 
 const PORT = 3000;
 
-recordEvery(5);
+recordEvery(10);
 
 app.get('/all', getAll);
 
