@@ -1,0 +1,48 @@
+{
+  "name": "thermo-hygrometer-pi",
+  "version": "1.0.0",
+  "description": "A NodeJS server made to manage a temperature humidity sensor using a Raspberry Pi and an inexpensive DHT11 sensor.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "mocha",
+    "sensor": "node dht11/testSensor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelmvsouza/thermo-hygrometer-pi.git"
+  },
+  "keywords": [
+    "thermo-hygromoter",
+    "termo-higrômetro",
+    "raspberry pi",
+    "pi",
+    "rpi",
+    "DHT11",
+    "DHT_11",
+    "DHT 11",
+    "DHT-11",
+    "nodejs",
+    "node",
+    "node_js",
+    "node-js",
+    "node js"
+  ],
+  "author": "Rafael Souza",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/rafaelmvsouza/thermo-hygrometer-pi/issues"
+  },
+  "homepage": "https://github.com/rafaelmvsouza/thermo-hygrometer-pi#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "mariadb": "^2.5.5",
+    "node-dht-sensor": "^0.4.3"
+  }
+}
